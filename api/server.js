@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 // local imports
 const categoryRouter = require('../Routes/categoryRouter');
 const authRouter = require('../Routes/authRouter');
+const questionRouter = require('../Routes/questionRouter');
 
 // Server instance
 const server = express();
@@ -31,6 +32,7 @@ server.use(express.json());
 // routes
 server.use('/api/auth', authRouter);
 server.use('/api/categories', categoryRouter);
+server.use('/api/questions', questionRouter);
 
 // sanity check
 server.use('/', (req, res) => {
